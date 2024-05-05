@@ -14,13 +14,14 @@ export default function Context({
   const [loading, setLoading] = useState<boolean>(true)
   const [currentWeather, setCurrentWeather] = useState<object>({})
   const getWeather = useGetWeathe()
+
   useEffect(() => {
-    const getCurrentWeaderData = async () => {
+    const initSetData = async () => {
       const result = await getWeather()
       setCurrentWeather(result)
       setLoading(false)
     }
-    getCurrentWeaderData()
+    initSetData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
