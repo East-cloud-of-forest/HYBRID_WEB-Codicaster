@@ -5,7 +5,7 @@ import SelectCity from '@/components/SelectCity'
 
 export default function Page() {
   return (
-    <main className="bg-blue-600 min-h-screen flex flex-col justify-evenly items-center p-5">
+    <main className="min-h-screen flex flex-col justify-evenly items-center p-5">
       <Image
         src="/img/error.png"
         alt=""
@@ -15,7 +15,7 @@ export default function Page() {
         className="object-contain"
         priority={true}
       />
-      <p className="text-center text-white font-black text-lg">
+      <p className="text-center text-white text-lg">
         위치 정보를 가져올 수 없어요.
         <br />
         위치 아이콘을 눌러 지역을 선택해주세요 !

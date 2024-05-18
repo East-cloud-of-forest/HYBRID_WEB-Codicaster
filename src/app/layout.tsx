@@ -1,9 +1,16 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Nanum_Gothic, Outfit } from 'next/font/google'
 import '../styles/globals.css'
 import Context from './Context'
 
-const inter = Inter({ subsets: ['latin'] })
+const NanumFont = Nanum_Gothic({
+  subsets: ['latin'],
+  weight: ['400', '700', '800'],
+})
+const OutfitFont = Outfit({
+  subsets: ['latin'],
+  variable: '--outfit',
+})
 
 export const metadata: Metadata = {
   title: 'Codicaster',
@@ -17,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Context className={inter.className}>{children}</Context>
+      <Context className={`${NanumFont.className} ${OutfitFont.variable}`}>
+        {children}
+      </Context>
     </html>
   )
 }
