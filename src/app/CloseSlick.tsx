@@ -16,7 +16,7 @@ export default function CloseSlick() {
       arrows={false}
       dots={true}
       autoplay={true}
-      autoplaySpeed={5000}
+      autoplaySpeed={7000}
       speed={2000}
       dotsClass="!flex justify-center items-center gap-2"
       className="h-1 w-full [&_div]:h-full min-h-0 flex-auto !flex flex-col-reverse [&_.slick-active>.page]:bg-opacity-40"
