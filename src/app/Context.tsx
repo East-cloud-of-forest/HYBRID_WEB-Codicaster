@@ -36,7 +36,6 @@ export default function Context({
     }
     const initSetData = async () => {
       const weatherResult = await getWeather(locationData)
-      console.log(weatherResult)
       setWeatherData(weatherResult)
       setLoading(false)
       if (path === 'location_error') router.replace('/')
