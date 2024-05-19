@@ -30,7 +30,6 @@ export default function Context({
   })
   const getWeather = useGetWeathe()
   const background = getBg(weatherData?.main?.icon)
-  console.log(background)
 
   useEffect(() => {
     if (locationData.type === 'none') {
@@ -39,6 +38,7 @@ export default function Context({
     const initSetData = async () => {
       const weatherResult = await getWeather(locationData)
       setWeatherData(weatherResult)
+      console.log(weatherResult)
       // setLoading(false)
       if (path === 'location_error') router.replace('/')
     }

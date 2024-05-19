@@ -4,11 +4,13 @@ import Image from 'next/image'
 import { useCTX } from './Context'
 import SelectCity from '@/components/SelectCity'
 import getIcon from '@/lib/getIcon'
+import CloseSlick from './CloseSlick'
 
 export default function Home() {
   const { locationData, weatherData } = useCTX()
   const weatherIcon = getIcon(weatherData?.main?.icon)
-  
+  console.log(weatherData)
+
   return locationData?.type === 'none' ? (
     <div className="flex justify-center items-center h-screen">
       <p className="animate-ping">LOADING</p>
@@ -30,9 +32,9 @@ export default function Home() {
         </SelectCity>
       </div>
 
-      <div className="flex gap-1 justify-around items-center bg-white bg-opacity-20 rounded-2xl py-5 shadow-[0_0_10px_rgba(0,0,0,0.3)]">
+      <div className="flex gap-1 justify-around items-center bg-white bg-opacity-20 rounded-2xl shadow-[0_0_10px_rgba(0,0,0,0.3)] py-10">
         <div className="flex flex-col gap-2 items-center justify-center text-center flex-1">
-          <p className="text-[calc(3.5rem+10vw)] font-outline font-thin">
+          <p className="text-[calc(3.5rem+10vw)] font-outline font-thin leading-none">
             {Math.round(weatherData.main.temp)}°
           </p>
           <p>
@@ -53,7 +55,19 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex gap-1 justify-around items-center bg-white bg-opacity-20 rounded-2xl py-5 shadow-[0_0_10px_rgba(0,0,0,0.3)] flex-1"></div>
+
+      <div className="flex gap-1 justify-around items-center bg-white bg-opacity-20 rounded-2xl py-5 shadow-[0_0_10px_rgba(0,0,0,0.3)] flex-1 h-0 w-full flex-col p-3">
+        <CloseSlick />
+        <div
+          className="py-1 px-3 rounded-full w-full overflow-hidden"
+          style={{ background: weatherData.tempByCloth.boxColor }}
+        >
+          <p className="animate-cloth-text truncate">
+            {weatherData.tempByCloth.clothText}
+          </p>
+        </div>
+      </div>
+
       <div className="flex gap-1 justify-around items-center bg-white bg-opacity-20 rounded-2xl py-5 shadow-[0_0_10px_rgba(0,0,0,0.3)]">
         {[
           { text: '아침', data: 'morn' },
