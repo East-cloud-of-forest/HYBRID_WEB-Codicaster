@@ -49,6 +49,13 @@ export default function SelectCity({
       type: 'select',
       ...result.value,
     })
+    localStorage.setItem(
+      'location',
+      JSON.stringify({
+        type: 'select',
+        ...result.value,
+      }),
+    )
   }
   return cloneElement(children, { onClick: locationSelect })
 }

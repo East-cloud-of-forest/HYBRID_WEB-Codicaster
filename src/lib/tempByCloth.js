@@ -2,7 +2,6 @@ export default function tempByCloth(curtemp) {
   let clothTag = []
   let clothText = ``
   let boxColor = ``
-  console.log(curtemp)
   if (curtemp >= 28) {
     clothTag = ['민소매', '반팔', '반바지']
     clothText = `너무 더워요. 얇게 입어 열사병에 주의하고 실내에 있기로 해요.`
