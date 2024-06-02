@@ -1,4 +1,4 @@
-import { useCTX } from '@/app/Context'
+import { useCTX } from '@/app/(app)/Context'
 import { JSXElementConstructor, ReactElement, cloneElement } from 'react'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
